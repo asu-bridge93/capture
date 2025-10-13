@@ -1,0 +1,19 @@
+root@fw1:/# iptables -t filter -vnL FORWARD --line-numbers
+Chain FORWARD (policy DROP 0 packets, 0 bytes)
+num   pkts bytes target     prot opt in     out     source               destination         
+1       44  3596 ACCEPT     all  --  *      *       0.0.0.0/0            0.0.0.0/0            ctstate RELATED,ESTABLISHED
+2        6   504 ACCEPT     icmp --  *      *       0.0.0.0/0            0.0.0.0/0            ctstate NEW icmptype 8
+3        1    84 ACCEPT     udp  --  *      *       0.0.0.0/0            172.16.3.53          ctstate NEW udp dpt:53
+4        1    60 ACCEPT     tcp  --  *      *       0.0.0.0/0            172.16.3.53          ctstate NEW tcp dpt:53
+
+-------------------------------------------------------------------------------------------------------------------------
+
+root@ns1:/# conntrack -E
+    [NEW] tcp      6 120 SYN_SENT src=10.1.2.53 dst=10.1.3.53 sport=48381 dport=53 [UNREPLIED] src=10.1.3.53 dst=10.1.2.53 sport=53 dport=48381
+ [UPDATE] tcp      6 60 SYN_RECV src=10.1.2.53 dst=10.1.3.53 sport=48381 dport=53 src=10.1.3.53 dst=10.1.2.53 sport=53 dport=48381
+ [UPDATE] tcp      6 432000 ESTABLISHED src=10.1.2.53 dst=10.1.3.53 sport=48381 dport=53 src=10.1.3.53 dst=10.1.2.53 sport=53 dport=48381 [ASSURED]
+ [UPDATE] tcp      6 120 FIN_WAIT src=10.1.2.53 dst=10.1.3.53 sport=48381 dport=53 src=10.1.3.53 dst=10.1.2.53 sport=53 dport=48381 [ASSURED]
+ [UPDATE] tcp      6 30 LAST_ACK src=10.1.2.53 dst=10.1.3.53 sport=48381 dport=53 src=10.1.3.53 dst=10.1.2.53 sport=53 dport=48381 [ASSURED]
+ [UPDATE] tcp      6 120 TIME_WAIT src=10.1.2.53 dst=10.1.3.53 sport=48381 dport=53 src=10.1.3.53 dst=10.1.2.53 sport=53 dport=48381 [ASSURED]
+[DESTROY] tcp      6 TIME_WAIT src=10.1.2.53 dst=10.1.3.53 sport=48381 dport=53 src=10.1.3.53 dst=10.1.2.53 sport=53 dport=48381 [ASSURED]
+^Cconntrack v1.4.5 (conntrack-tools): 7 flow events have been shown.
