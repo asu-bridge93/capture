@@ -1,0 +1,13 @@
+frontend www-front
+	bind 172.16.3.12:80
+	default_backend www-back
+
+backend www-back
+	balance roundrobin
+	server sv1 172.16.2.1:80 check inter 5000 fall 3 rise 2
+	server sv2 172.16.2.2:80 check inter 5000 fall 3 rise 2
+	http-request set-header x-forwarded-proto http if !{ ssl_fc }
+	option forwardfor
+	option httpchk GET / HTTP/1.1
+	http-check send hdr Host www.example.com
+	http-check expect status 200
