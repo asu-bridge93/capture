@@ -5,14 +5,16 @@
 A virtual network environment built with Docker containers and tinet to observe and learn network protocols through packet capture and analysis.
 
 ## Project Structure
-![物理構成図](structure.png "structure")
+![](structure.png "structure")
 ```
-├── architecture.drawio
+.
 ├── env
 │   ├── base
 │   │   ├── check_mac.sh
 │   │   └── setup_mac.sh
 │   └── env.yaml
+├── images
+│   └── structure.png
 ├── L2
 │   ├── 2-1_ethernet
 │   │   ├── datalink.png
