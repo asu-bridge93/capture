@@ -1,0 +1,12 @@
+frontend www2-front
+	bind 172.16.3.34:80
+	default_backend www2-back
+	capture cookie SERVER len 32
+
+backend www2-back
+	balance roundrobin
+	cookie SERVER insert indirect nocache
+	server sv1 172.16.2.3:80 track www-back/sv1 cookie sv1
+	server sv2 172.16.2.4:80 track www-back/sv2 cookie sv2
+	http-request set-header x-forwarded-proto http
+	option forwardfor

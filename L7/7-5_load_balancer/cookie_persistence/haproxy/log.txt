@@ -1,0 +1,11 @@
+root@lb1:/# tail -10 /var/log/haproxy.log
+Oct 15 12:01:48 lb1 haproxy[718]: 10.1.2.53:42060 [15/Oct/2025:12:01:48.360] www2-front www2-back/sv1 0/0/0/0/0 200 229 SERVER=sv1 - --VN 1/1/0/0/0 0/0 "GET / HTTP/1.1"
+Oct 15 12:01:49 lb1 haproxy[718]: 10.1.2.53:42062 [15/Oct/2025:12:01:49.389] www2-front www2-back/sv1 0/0/0/0/0 200 229 SERVER=sv1 - --VN 1/1/0/0/0 0/0 "GET / HTTP/1.1"
+Oct 15 12:01:50 lb1 haproxy[718]: 10.1.2.53:42078 [15/Oct/2025:12:01:50.436] www2-front www2-back/sv1 0/0/0/0/0 200 229 SERVER=sv1 - --VN 1/1/0/0/0 0/0 "GET / HTTP/1.1"
+Oct 15 12:01:51 lb1 haproxy[718]: 10.1.2.53:42094 [15/Oct/2025:12:01:51.458] www2-front www2-back/sv1 0/0/0/0/0 200 229 SERVER=sv1 - --VN 1/1/0/0/0 0/0 "GET / HTTP/1.1"
+Oct 15 12:01:52 lb1 haproxy[718]: 10.1.2.53:42108 [15/Oct/2025:12:01:52.513] www2-front www2-back/sv1 0/0/0/0/0 200 229 SERVER=sv1 - --VN 1/1/0/0/0 0/0 "GET / HTTP/1.1"
+Oct 15 12:01:53 lb1 haproxy[718]: 10.1.2.53:42116 [15/Oct/2025:12:01:53.543] www2-front www2-back/sv1 0/0/0/0/0 200 229 SERVER=sv1 - --VN 1/1/0/0/0 0/0 "GET / HTTP/1.1"
+Oct 15 12:01:54 lb1 haproxy[718]: 10.1.2.53:38566 [15/Oct/2025:12:01:54.575] www2-front www2-back/sv1 0/0/0/0/0 200 229 SERVER=sv1 - --VN 1/1/0/0/0 0/0 "GET / HTTP/1.1"
+Oct 15 12:01:55 lb1 haproxy[718]: 10.1.2.53:38582 [15/Oct/2025:12:01:55.592] www2-front www2-back/sv1 0/0/0/0/0 200 229 SERVER=sv1 - --VN 1/1/0/0/0 0/0 "GET / HTTP/1.1"
+Oct 15 12:01:56 lb1 haproxy[718]: 10.1.2.53:38592 [15/Oct/2025:12:01:56.658] www2-front www2-back/sv1 0/0/0/0/0 200 229 SERVER=sv1 - --VN 1/1/0/0/0 0/0 "GET / HTTP/1.1"
+Oct 15 12:01:57 lb1 haproxy[718]: 10.1.2.53:38608 [15/Oct/2025:12:01:57.740] www2-front www2-back/sv1 0/0/0/0/0 200 229 SERVER=sv1 - --VN 1/1/0/0/0 0/0 "GET / HTTP/1.1"
