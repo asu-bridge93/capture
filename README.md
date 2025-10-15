@@ -4,8 +4,9 @@
 
 A virtual network environment built with Docker containers and tinet to observe and learn network protocols through packet capture and analysis.
 
+![](./overview/overview.png)
+
 ## Project Structure
-![](structure.png "structure")
 ```
 .
 ├── env
@@ -100,3 +101,7 @@ A virtual network environment built with Docker containers and tinet to observe 
 │   └── overview.png
 └── README.md
 ```
+
+## References
+### Books
+[みやたひろし (2024). *体験しながら学ぶ ネットワーク技術入門*. SBクリエイティブ.](https://www.sbcr.jp/product/4815618599/)
